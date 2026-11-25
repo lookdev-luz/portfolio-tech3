@@ -21,14 +21,15 @@
   const grid = document.querySelector('[data-project-grid]');
   let filter = 'todos';
   function updateProjects() {
-    const term = search.value.trim().toLocaleLowerCase('pt-BR');
+    const term = search?.value.trim().toLocaleLowerCase('pt-BR') ?? '';
     let count = 0;
     cards.forEach(card => {
       const show = card.dataset.name.includes(term) && (filter === 'todos' || card.dataset.category.split(' ').includes(filter));
       card.hidden = !show;
       if (show) count++;
     });
-    document.querySelector('[data-project-empty]').hidden = count > 0;
+    const empty = document.querySelector('[data-project-empty]');
+    if (empty) empty.hidden = count > 0;
   }
   search?.addEventListener('input', updateProjects);
   document.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => {

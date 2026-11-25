@@ -8,7 +8,7 @@
     const nodes=JSON.parse(view.querySelector('[data-architecture-data]').textContent);
     view.querySelectorAll('[data-node]').forEach(button=>button.addEventListener('click',()=>{
       const node=nodes[Number(button.dataset.node.split('-').pop())];
-      view.querySelectorAll('[data-node]').forEach(item=>item.classList.toggle('selected',item===button));
+      view.querySelectorAll('[data-node]').forEach(item=>{const active=item===button;item.classList.toggle('selected',active);item.setAttribute('aria-pressed',String(active));});
       view.querySelector('[data-node-info] strong').textContent=node.name;
       view.querySelector('[data-node-info] p').textContent=node.responsibility+' '+node.benefit;
     }));
