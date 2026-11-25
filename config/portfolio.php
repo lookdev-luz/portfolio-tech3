@@ -1,0 +1,66 @@
+<?php
+declare(strict_types=1);
+
+return [
+    'full_name' => 'Seu Nome',
+    'professional_name' => 'Seu Nome',
+    'role' => 'Desenvolvedor web',
+    'headline' => 'Engenharia de software para problemas reais.',
+    'description' => 'Desenvolvimento web cuidadoso, acessível e sob medida para o seu negócio.',
+    'bio' => 'Sou um desenvolvedor em início de carreira construindo soluções web claras e úteis. Este portfólio é um template demonstrativo. Edite config/portfolio.php para apresentar sua trajetória real.',
+    'photo' => '',
+    'email' => '',
+    'phone' => '',
+    'whatsapp' => '',
+    'github_user' => '',
+    'github_url' => '',
+    'linkedin' => '',
+    'location' => 'Brasil',
+    'available' => true,
+    'language' => 'Português (Brasil)',
+    'version' => '1.0.0',
+    'seo' => [
+        'title' => 'Seu Nome — Desenvolvedor web',
+        'description' => 'Portfólio profissional demonstrativo de desenvolvimento web.',
+        'canonical' => '',
+        'indexable' => false,
+    ],
+    'technologies' => [
+        ['name'=>'HTML5','category'=>'Frontend','description'=>'Estrutura semântica e acessível para páginas web.','uses'=>'Sites, landing pages e interfaces.','services'=>'Sites e portfólios'],
+        ['name'=>'CSS3','category'=>'Frontend','description'=>'Estilos responsivos para interfaces consistentes.','uses'=>'Layouts adaptáveis e componentes visuais.','services'=>'Sites e sistemas web'],
+        ['name'=>'JavaScript','category'=>'Frontend','description'=>'Interações no navegador com APIs nativas.','uses'=>'Formulários, filtros e navegação dinâmica.','services'=>'Interfaces web'],
+        ['name'=>'PHP','category'=>'Backend','description'=>'Lógica de servidor para aplicações web.','uses'=>'Sites dinâmicos e integrações.','services'=>'Backend e sistemas web'],
+        ['name'=>'MySQL / SQL','category'=>'Dados','description'=>'Consulta e organização de dados relacionais.','uses'=>'Cadastros e relatórios.','services'=>'Modelagem e consultas'],
+        ['name'=>'Git e Linux','category'=>'Ferramentas','description'=>'Controle de versão e ambiente de hospedagem.','uses'=>'Colaboração e publicação web.','services'=>'Manutenção e publicação'],
+    ],
+    'services' => [
+        ['name'=>'Sites e landing pages','icon'=>'◫','description'=>'Páginas profissionais, rápidas e adaptadas a celulares.','benefits'=>['Apresentação clara do negócio','Navegação acessível','Contato fácil'],'examples'=>'Sites institucionais, páginas de campanha e portfólios','technologies'=>'HTML, CSS, JavaScript e PHP','enabled'=>true],
+        ['name'=>'Sistemas web','icon'=>'▦','description'=>'Ferramentas web para organizar processos e informações.','benefits'=>['Fluxos adequados à rotina','Interface simples de usar','Base preparada para evoluir'],'examples'=>'Cadastros, painéis e controles internos','technologies'=>'PHP, JavaScript e SQL','enabled'=>true],
+        ['name'=>'Backend e dados','icon'=>'⌘','description'=>'Lógica de servidor, integrações e estruturação de dados.','benefits'=>['Regras de negócio consistentes','Dados organizados','Integrações documentadas'],'examples'=>'APIs, consultas SQL e manutenção','technologies'=>'PHP, APIs REST e MySQL','enabled'=>true],
+    ],
+    'projects' => [
+        ['name'=>'Controle de estoque','category'=>'Sistema demonstrativo','description'=>'Conceito de aplicação para acompanhar produtos e movimentações.','objective'=>'Demonstrar organização de um fluxo básico de estoque.','features'=>['Cadastro de produtos','Registro de movimentações','Consulta de saldo'],'problem'=>'Pequenas operações podem precisar de uma visão central de entradas e saídas.','technologies'=>['PHP','MySQL','JavaScript'],'image'=>'','demo'=>'','github'=>'','type'=>'Projeto demonstrativo'],
+        ['name'=>'Página de apresentação','category'=>'Website demonstrativo','description'=>'Proposta de página empresarial responsiva com foco em clareza.','objective'=>'Apresentar serviços e facilitar o primeiro contato.','features'=>['Conteúdo responsivo','Seções de serviços','Chamada para contato'],'problem'=>'Informações dispersas dificultam que clientes entendam uma oferta.','technologies'=>['HTML5','CSS3','JavaScript'],'image'=>'','demo'=>'','github'=>'','type'=>'Projeto demonstrativo'],
+        ['name'=>'Cadastro de clientes','category'=>'Sistema demonstrativo','description'=>'Exemplo conceitual de organização de dados de clientes.','objective'=>'Demonstrar um fluxo de cadastro e consulta.','features'=>['Campos estruturados','Busca de registros','Relacionamento de dados'],'problem'=>'Registros organizados facilitam a consulta em processos cotidianos.','technologies'=>['PHP','MySQL','SQL'],'image'=>'','demo'=>'','github'=>'','type'=>'Projeto demonstrativo'],
+    ],
+    'code_examples' => [
+        ['id'=>'php','file'=>'pedido.php','label'=>'PHP','description'=>'Calcula um total a partir de itens já validados.','practice'=>'A lógica de domínio pode ficar em funções pequenas e reaproveitáveis.','code'=>"<?php\nfunction totalPedido(array $itens): float\n{\n    $total = 0.0;\n\n    foreach ($itens as $item) {\n        $total += $item['preco'] * $item['quantidade'];\n    }\n\n    return $total;\n}"],
+        ['id'=>'html','file'=>'pagina.html','label'=>'HTML','description'=>'Estrutura semântica básica de uma página.','practice'=>'Elementos semânticos ajudam navegação e tecnologias assistivas.','code'=>"<main>\n  <article>\n    <h1>Uma solução para sua equipe</h1>\n    <p>Informação clara para quem visita.</p>\n    <a href=\"#contato\">Conversar sobre o projeto</a>\n  </article>\n</main>"],
+        ['id'=>'css','file'=>'layout.css','label'=>'CSS','description'=>'Layout adaptável usando Grid.','practice'=>'Media queries ajustam a composição para telas menores.','code'=>".cards {\n  display: grid;\n  grid-template-columns: repeat(\n    auto-fit, minmax(min(100%, 16rem), 1fr)\n  );\n  gap: 1rem;\n}"],
+        ['id'=>'javascript','file'=>'interface.js','label'=>'JavaScript','description'=>'Atualiza um texto com dados da interface.','practice'=>'Use textContent para inserir texto sem interpretar marcação HTML.','code'=>"const botao = document.querySelector('[data-action]');\nconst aviso = document.querySelector('[role=status]');\n\nbotao?.addEventListener('click', () => {\n  aviso.textContent = 'Ação concluída.';\n});"],
+        ['id'=>'mysql','file'=>'consulta.sql','label'=>'MySQL','description'=>'Consulta pedidos associados aos clientes.','practice'=>'JOIN relaciona registros usando chaves explícitas.','code'=>"SELECT clientes.nome, pedidos.criado_em\nFROM clientes\nINNER JOIN pedidos\n  ON pedidos.cliente_id = clientes.id\nORDER BY pedidos.criado_em DESC;"],
+    ],
+    'architectures' => [
+        ['id'=>'site','name'=>'Site institucional','description'=>'Fluxo demonstrativo de uma página servida pelo PHP.','nodes'=>[['name'=>'Visitante','responsibility'=>'Solicita uma página no navegador.','benefit'=>'Acesso simples ao conteúdo.'],['name'=>'Navegador','responsibility'=>'Interpreta HTML, CSS e JavaScript.','benefit'=>'Experiência acessível em diferentes dispositivos.'],['name'=>'Servidor web','responsibility'=>'Recebe a requisição HTTP.','benefit'=>'Entrega conteúdo pelo domínio.'],['name'=>'PHP','responsibility'=>'Monta a resposta no servidor.','benefit'=>'Conteúdo configurável e reutilizável.'],['name'=>'HTML','responsibility'=>'Representa a página enviada.','benefit'=>'Conteúdo legível pelo navegador.']]],
+        ['id'=>'sistema','name'=>'Sistema web','description'=>'Fluxo educacional de uma aplicação com persistência relacional.','nodes'=>[['name'=>'Usuário','responsibility'=>'Interage com a aplicação.','benefit'=>'Acesso aos fluxos do sistema.'],['name'=>'Interface','responsibility'=>'Apresenta dados e recebe ações.','benefit'=>'Operação clara.'],['name'=>'Backend PHP','responsibility'=>'Valida regras e processa solicitações.','benefit'=>'Regras aplicadas no servidor.'],['name'=>'MySQL','responsibility'=>'Persiste dados relacionados.','benefit'=>'Consulta estruturada de registros.']]],
+        ['id'=>'integracao','name'=>'Integração de sistemas','description'=>'Fluxo conceitual de uma comunicação via API.','nodes'=>[['name'=>'Interface','responsibility'=>'Inicia a ação solicitada.','benefit'=>'Ponto de interação do usuário.'],['name'=>'API','responsibility'=>'Define o formato da comunicação.','benefit'=>'Integração organizada.'],['name'=>'Serviço externo','responsibility'=>'Processa a solicitação recebida.','benefit'=>'Compartilhamento de capacidades.'],['name'=>'Processamento','responsibility'=>'Interpreta o retorno.','benefit'=>'Resposta adequada ao contexto.'],['name'=>'Resposta','responsibility'=>'Informa o resultado à interface.','benefit'=>'Retorno compreensível.']]],
+    ],
+    'process' => [
+        ['name'=>'Levantamento','description'=>'Entender objetivos, público, conteúdo e restrições do projeto.'],
+        ['name'=>'Planejamento','description'=>'Organizar escopo, etapas e critérios para validar a entrega.'],
+        ['name'=>'Desenvolvimento','description'=>'Construir a solução em ciclos claros e revisáveis.'],
+        ['name'=>'Testes e validação','description'=>'Verificar navegação, conteúdo e comportamento nos dispositivos previstos.'],
+        ['name'=>'Publicação','description'=>'Preparar arquivos e configuração para o ambiente de hospedagem.'],
+        ['name'=>'Acompanhamento','description'=>'Ajustes posteriores podem ser combinados conforme o projeto.'],
+    ],
+];
