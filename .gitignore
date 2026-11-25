@@ -1,3 +1,13 @@
 .DS_Store
 Thumbs.db
 *.log
+/vendor/
+/node_modules/
+/backups/
+/tmp/
+*.bak
+*.swp
+.env
+.env.*
+!.env.example
+config.local.php
