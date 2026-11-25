@@ -16,7 +16,7 @@
       const button=document.createElement('button');button.className='command-option';button.type='button';button.setAttribute('role','option');button.setAttribute('aria-selected',String(index===selected));
       const icon=document.createElement('span');icon.className='option-icon';icon.textContent=item.icon;
       const title=document.createElement('span');title.textContent=item.name;
-      const hint=document.createElement('small');hint.textContent=item.target.startsWith('#')?'Ir para seção':'Ação';
+      const hint=document.createElement('small');hint.textContent=item.target.startsWith('#')?'NAVEGAR':'CONTATO';
       button.append(icon,title,hint);button.addEventListener('click',()=>run(item));results.append(button);
     });
   }
