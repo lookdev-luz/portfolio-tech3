@@ -1,0 +1,3 @@
+<?php section('sobre', 'Uma apresentação direta', '01 / README.md'); ?>
+<div class="readme-card"><div class="readme-mark">#</div><div class="readme-content"><h3>Sobre <?= e($portfolio['professional_name']) ?></h3><p><?= e($portfolio['bio']) ?></p><h4>Como gosto de trabalhar</h4><p>Com comunicação objetiva, escopo combinado e atenção aos detalhes que tornam um produto mais simples de usar.</p><div class="readme-meta"><span>⌖ <?= e($portfolio['location']) ?></span><span>◷ <?= !empty($portfolio['available']) ? 'Disponível para conversar' : 'Disponibilidade sob consulta' ?></span><span>⌘ Desenvolvimento web</span></div></div></div>
+<?php end_section(); ?>
