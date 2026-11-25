@@ -53,7 +53,7 @@
     event.preventDefault();
     if (!form.reportValidity()) return;
     const values = new FormData(form);
-    const summary = ['# Solicitação de projeto','','Nome: '+values.get('name'),'Tipo: '+values.get('type'),'Objetivo: '+values.get('objective'),'Descrição: '+values.get('description'),values.get('deadline')?'Prazo desejado: '+values.get('deadline'):''].filter(Boolean).join('\n');
+    const summary = ['Olá! Conheci seu portfólio e gostaria de conversar sobre um projeto.','','Nome: '+values.get('name'),'Tipo de projeto: '+values.get('type'),values.get('objective')?'Objetivo: '+values.get('objective'):'',values.get('description')?'Descrição: '+values.get('description'):'',values.get('deadline')?'Prazo desejado: '+values.get('deadline'):''].filter(Boolean).join('\n');
     document.querySelector('[data-summary-text]').textContent = summary;
     const panel = document.querySelector('[data-contact-summary]');
     panel.hidden = false;
@@ -64,7 +64,7 @@
     wa.hidden = !digits;
     if (digits) wa.href = 'https://wa.me/'+digits+'?text='+encodeURIComponent(summary);
     email.hidden = !address;
-    if (address) email.href = 'mailto:'+encodeURIComponent(address)+'?subject='+encodeURIComponent('Solicitação de projeto')+'&body='+encodeURIComponent(summary);
+    if (address) email.href = 'mailto:'+encodeURIComponent(address)+'?subject='+encodeURIComponent('Projeto: '+values.get('type'))+'&body='+encodeURIComponent(summary);
     panel.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'nearest'});
     window.portfolioToast('Resumo preparado. Escolha como deseja enviá-lo.');
   });
@@ -73,6 +73,12 @@
     catch { window.portfolioToast('Não foi possível copiar. Selecione e copie o resumo.'); }
   });
   document.querySelector('[data-form-clear]')?.addEventListener('click', () => { form.reset(); document.querySelector('[data-contact-summary]').hidden = true; window.portfolioToast('Campos limpos.'); });
+  document.querySelectorAll('[data-project-type]').forEach(link => link.addEventListener('click', () => {
+    const select = form?.querySelector('[name="type"]');
+    if (!select) return;
+    const option = [...select.options].find(item => item.textContent === link.dataset.projectType);
+    if (option) select.value = option.value;
+  }));
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(entries => entries.forEach(entry => {
       if (!entry.isIntersecting) return;
