@@ -22,7 +22,7 @@
   }
   function run(item) {
     dialog.close();
-    if(item.target.startsWith('#')) { document.querySelector(item.target)?.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});history.replaceState(null,'',item.target);return; }
+    if(item.target.startsWith('#')) { window.location.hash=item.target;return; }
     const emailLink=document.querySelector('.direct-contact a[href^="mailto:"]');
     const links={github:document.querySelector('.text-link[href]')?.href,email:emailLink?.href,whatsapp:document.querySelector('.direct-contact a[href*="wa.me/"]')?.href};
     if(item.target==='copy') {
