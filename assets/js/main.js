@@ -20,11 +20,13 @@
   const cards = [...document.querySelectorAll('[data-project]')];
   const grid = document.querySelector('[data-project-grid]');
   let filter = 'todos';
+  const normalize = value => value.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('pt-BR');
   function updateProjects() {
-    const term = search?.value.trim().toLocaleLowerCase('pt-BR') ?? '';
+    const term = normalize(search?.value.trim() ?? '');
     let count = 0;
     cards.forEach(card => {
-      const show = card.dataset.name.includes(term) && (filter === 'todos' || card.dataset.category.split(' ').includes(filter));
+      const searchable = normalize(card.dataset.name+' '+card.textContent);
+      const show = searchable.includes(term) && (filter === 'todos' || card.dataset.category.split(' ').includes(filter));
       card.hidden = !show;
       if (show) count++;
     });
