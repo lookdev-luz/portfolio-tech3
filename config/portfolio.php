@@ -44,7 +44,20 @@ return [
         ['name'=>'Cadastro de clientes','category'=>'Sistema demonstrativo','description'=>'Exemplo demonstrativo para cadastrar clientes e consultar seus registros de forma organizada.','objective'=>'Mostrar um fluxo simples de registro, busca e consulta de informações.','features'=>['Campos estruturados','Busca de registros','Relacionamento de dados'],'problem'=>'Dados anotados em lugares diferentes podem ser difíceis de localizar e manter atualizados.','technologies'=>['PHP','MySQL','SQL'],'image'=>'','demo'=>'','github'=>'','type'=>'Projeto demonstrativo'],
     ],
     'code_examples' => [
-        ['id'=>'php','file'=>'pedido.php','label'=>'PHP','description'=>'Calcula um total a partir de itens já validados.','practice'=>'A lógica de domínio pode ficar em funções pequenas e reaproveitáveis.','code'=>"<?php\nfunction totalPedido(array $itens): float\n{\n    $total = 0.0;\n\n    foreach ($itens as $item) {\n        $total += $item['preco'] * $item['quantidade'];\n    }\n\n    return $total;\n}"],
+        ['id'=>'php','file'=>'pedido.php','label'=>'PHP','description'=>'Calcula um total a partir de itens já validados.','practice'=>'A lógica de domínio pode ficar em funções pequenas e reaproveitáveis.','code'=><<<'PHP_EXAMPLE'
+<?php
+function totalPedido(array $itens): float
+{
+    $total = 0.0;
+
+    foreach ($itens as $item) {
+        $total += $item['preco'] * $item['quantidade'];
+    }
+
+    return $total;
+}
+PHP_EXAMPLE
+        ],
         ['id'=>'html','file'=>'pagina.html','label'=>'HTML','description'=>'Estrutura semântica básica de uma página.','practice'=>'Elementos semânticos ajudam navegação e tecnologias assistivas.','code'=>"<main>\n  <article>\n    <h1>Uma solução para sua equipe</h1>\n    <p>Informação clara para quem visita.</p>\n    <a href=\"#contato\">Conversar sobre o projeto</a>\n  </article>\n</main>"],
         ['id'=>'css','file'=>'layout.css','label'=>'CSS','description'=>'Layout adaptável usando Grid.','practice'=>'Media queries ajustam a composição para telas menores.','code'=>".cards {\n  display: grid;\n  grid-template-columns: repeat(\n    auto-fit, minmax(min(100%, 16rem), 1fr)\n  );\n  gap: 1rem;\n}"],
         ['id'=>'javascript','file'=>'interface.js','label'=>'JavaScript','description'=>'Atualiza um texto com dados da interface.','practice'=>'Use textContent para inserir texto sem interpretar marcação HTML.','code'=>"const botao = document.querySelector('[data-action]');\nconst aviso = document.querySelector('[role=status]');\n\nbotao?.addEventListener('click', () => {\n  aviso.textContent = 'Ação concluída.';\n});"],
