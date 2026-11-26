@@ -35,7 +35,14 @@
   document.querySelectorAll('[data-command-open]').forEach(button=>button.addEventListener('click',()=>{dialog.showModal();input.value='';render();input.focus();}));
   input.addEventListener('input',render);
   input.addEventListener('keydown',event=>{if(event.key==='ArrowDown'){event.preventDefault();selected=Math.min(selected+1,visible.length-1);render();}if(event.key==='ArrowUp'){event.preventDefault();selected=Math.max(0,selected-1);render();}if(event.key==='Enter'&&visible[selected]){event.preventDefault();run(visible[selected]);}});
-  document.addEventListener('keydown',event=>{if((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==='k'){event.preventDefault();if(dialog.open)dialog.close();else document.querySelector('[data-command-open]').click();}});
+  document.addEventListener('keydown',event=>{
+    const target=event.target;
+    const editing=target instanceof HTMLElement && (target.isContentEditable || ['INPUT','TEXTAREA','SELECT'].includes(target.tagName));
+    if(!editing&&(event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==='k'){
+      event.preventDefault();
+      if(dialog.open)dialog.close();else document.querySelector('[data-command-open]').click();
+    }
+  });
   dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close();});
   dialog.addEventListener('close',()=>document.querySelector('[data-command-open]')?.focus());
 })();
