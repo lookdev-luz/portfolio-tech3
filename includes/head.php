@@ -4,8 +4,8 @@ $robots = !empty($seo['indexable']) ? 'index,follow' : 'noindex,nofollow';
 $canonical = external_url($seo['canonical'] ?? '');
 ?>
 <!doctype html>
-<html lang="pt-BR">
-<head>
+<html lang="pt-BR" data-theme="dark" data-resolved-theme="dark" data-portfolio-model="3">
+<head><script src="assets/js/theme-control.js"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="<?= e($robots) ?>">
@@ -25,4 +25,5 @@ $canonical = external_url($seo['canonical'] ?? '');
   <link rel="stylesheet" href="assets/css/animations.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
   <script type="application/ld+json"><?= json_encode(['@context'=>'https://schema.org','@type'=>'Person','name'=>$portfolio['full_name'],'jobTitle'=>$portfolio['role'],'description'=>$portfolio['description'],'address'=>['@type'=>'PostalAddress','addressCountry'=>'BR'],'url'=>$canonical ?: null], JSON_HEX_TAG|JSON_HEX_APOS|JSON_HEX_QUOT|JSON_HEX_AMP|JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES) ?></script>
+<link rel="stylesheet" href="assets/css/theme-control.css">
 </head>

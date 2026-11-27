@@ -82,11 +82,20 @@
     const option = [...select.options].find(item => item.textContent === link.dataset.projectType);
     if (option) select.value = option.value;
   }));
+  let selectedFile = document.querySelector('.tree-link.active');
+  document.querySelectorAll('.tree-link').forEach(link => link.addEventListener('click', () => {
+    selectedFile?.classList.remove('active');
+    selectedFile = link;
+    link.classList.add('active');
+  }));
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(entries => entries.forEach(entry => {
       if (!entry.isIntersecting) return;
       entry.target.classList.add('revealed');
-      document.querySelectorAll('.tree-link').forEach(link => link.classList.toggle('active', link.hash === '#'+entry.target.id));
+      if (!selectedFile || !document.contains(selectedFile)) {
+        selectedFile = document.querySelector(`.tree-link[href="#${entry.target.id}"]`);
+        selectedFile?.classList.add('active');
+      }
     }), {rootMargin:'-25% 0px -60% 0px'});
     document.querySelectorAll('main section[id]').forEach(section => observer.observe(section));
   }

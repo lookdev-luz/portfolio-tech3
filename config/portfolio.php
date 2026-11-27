@@ -2,11 +2,11 @@
 declare(strict_types=1);
 
 return [
-    'full_name' => 'Seu Nome',
-    'professional_name' => 'Seu Nome',
-    'role' => 'Desenvolvedor web',
-    'headline' => 'Seu negócio merece ferramentas que simplificam o dia a dia.',
-    'description' => 'Sites e sistemas feitos para apresentar seu trabalho, organizar informações e facilitar tarefas da sua rotina.',
+    'full_name' => 'Elisa Prado (demonstração)',
+    'professional_name' => 'Elisa Prado',
+    'role' => 'Estudante de análise de dados',
+    'headline' => 'Dados organizados para perguntas melhores.',
+    'description' => 'Estudos demonstrativos de organização, consulta e apresentação de dados.',
     'bio' => 'Tenho interesse em criar soluções digitais organizadas e funcionais, pensadas a partir do que cada pessoa ou negócio precisa. Este modelo é demonstrativo. Personalize esta apresentação com sua trajetória real antes de publicar.',
     'photo' => '',
     'email' => '',
@@ -20,7 +20,7 @@ return [
     'language' => 'Português (Brasil)',
     'version' => '1.0.0',
     'seo' => [
-        'title' => 'Seu Nome — Desenvolvedor web',
+        'title' => 'Elisa Prado — Estudos em dados',
         'description' => 'Sites e sistemas web para apresentar serviços, organizar informações e facilitar tarefas do dia a dia.',
         'canonical' => '',
         'indexable' => false,

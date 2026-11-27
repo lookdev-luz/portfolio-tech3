@@ -5,14 +5,14 @@
     <a class="tree-link active" href="#inicio" data-file="README.md"><span class="file-icon md">M</span>README.md</a>
     <a class="tree-link" href="#sobre" data-file="about.php"><span class="file-icon php">⌘</span>about.php</a>
     <details open><summary><span class="folder">▾</span> services/</summary>
-      <a class="tree-link indent" href="#servicos" data-file="websites.php"><span class="file-icon php">⌘</span>websites.php</a>
-      <a class="tree-link indent" href="#servicos" data-file="systems.php"><span class="file-icon php">⌘</span>systems.php</a>
-      <a class="tree-link indent" href="#servicos" data-file="databases.sql"><span class="file-icon sql">▤</span>databases.sql</a>
+      <a class="tree-link indent" href="#servico-sites" data-file="websites.php"><span class="file-icon php">⌘</span>websites.php</a>
+      <a class="tree-link indent" href="#servico-sistemas" data-file="systems.php"><span class="file-icon php">⌘</span>systems.php</a>
+      <a class="tree-link indent" href="#servico-dados" data-file="databases.sql"><span class="file-icon sql">▤</span>databases.sql</a>
     </details>
     <details open><summary><span class="folder">▾</span> projects/</summary>
-      <a class="tree-link indent" href="#projetos" data-file="inventory-system"><span class="file-icon folder-icon">◆</span>inventory-system/</a>
-      <a class="tree-link indent" href="#projetos" data-file="landing-page"><span class="file-icon folder-icon">◆</span>landing-page/</a>
-      <a class="tree-link indent" href="#projetos" data-file="customer-management"><span class="file-icon folder-icon">◆</span>customer-management/</a>
+      <a class="tree-link indent" href="#projeto-1" data-file="inventory-system"><span class="file-icon folder-icon">◆</span>inventory-system/</a>
+      <a class="tree-link indent" href="#projeto-2" data-file="landing-page"><span class="file-icon folder-icon">◆</span>landing-page/</a>
+      <a class="tree-link indent" href="#projeto-3" data-file="customer-management"><span class="file-icon folder-icon">◆</span>customer-management/</a>
     </details>
     <a class="tree-link" href="#tecnologias" data-file="technologies.json"><span class="file-icon json">{ }</span>technologies.json</a>
     <a class="tree-link" href="#arquitetura" data-file="overview.svg"><span class="file-icon svg">◇</span>overview.svg</a>
